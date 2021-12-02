@@ -52,7 +52,8 @@ func main() {
 		}
 	}
 
-	log.Println(horizontal)
-	log.Println(vertical)
+	log.Println("Horizontal Position:", horizontal)
+	log.Println("Vertical Position:", vertical)
+	log.Println("Answer for Day 2, Part 1:", horizontal*vertical)
 
 }

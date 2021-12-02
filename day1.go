@@ -18,6 +18,7 @@ func main() {
 
 	// make the slice to put numbers in
 	numbers := make([]int, 0)
+	threesomes := make([]int, 0)
 
 	// read the numbers into the slice
 	scanner := bufio.NewScanner(file)
@@ -34,18 +35,31 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// let's actually do the work here:
-
-	counter := 0
-
-	for i, number := range numbers { // reeeee
-		if i > 0 {
-			if number > numbers[i-1] {
-				counter++
-			}
+	for i, number := range numbers {
+		if i > 0 && i < (len(numbers)-1) {
+			threesome := number + numbers[i-1] + numbers[i+1]
+			threesomes = append(threesomes, threesome)
 		}
 	}
 
-	log.Println("=== Done! The answer is: ", counter)
+	// reeeee
+	partOneAnswer := countIncreases(numbers)
+	partTwoAnswer := countIncreases(threesomes)
 
+	log.Println("=== Done! Part One's answer is: ", partOneAnswer)
+	log.Println("=== Done! Part Two's answer is: ", partTwoAnswer)
+
+}
+
+func countIncreases(numbers []int) int {
+	numberOfIncreases := 0
+
+	for i, number := range numbers {
+		if i > 0 {
+			if number > numbers[i-1] {
+				numberOfIncreases++
+			}
+		}
+	}
+	return numberOfIncreases
 }

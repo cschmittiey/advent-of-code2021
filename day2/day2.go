@@ -48,7 +48,7 @@ func main() {
 			vertical = vertical + currentInstruction.magnitude
 		}
 		if currentInstruction.direction == "down" {
-			vertical = vertical + currentInstruction.magnitude
+			vertical = vertical - currentInstruction.magnitude
 		}
 	}
 

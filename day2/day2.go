@@ -15,7 +15,7 @@ type instruction struct {
 
 func main() {
 
-	file, err := os.Open("day2.input.txt")
+	file, err := os.Open("day2.demoinput.txt")
 	if err != nil {
 		log.Fatal(err)
 	}

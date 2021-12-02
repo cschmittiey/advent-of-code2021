@@ -1,0 +1,5 @@
+tasks:
+  - init: |
+      go mod install
+    command: |
+      echo "gitpod command goes here"

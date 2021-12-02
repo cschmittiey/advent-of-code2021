@@ -15,7 +15,7 @@ type instruction struct {
 
 func main() {
 
-	file, err := os.Open("day2.demoinput.txt")
+	file, err := os.Open("day2.input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -45,10 +45,10 @@ func main() {
 			horizontal = horizontal + currentInstruction.magnitude
 		}
 		if currentInstruction.direction == "up" {
-			vertical = vertical + currentInstruction.magnitude
+			vertical = vertical - currentInstruction.magnitude
 		}
 		if currentInstruction.direction == "down" {
-			vertical = vertical - currentInstruction.magnitude
+			vertical = vertical + currentInstruction.magnitude
 		}
 	}
 

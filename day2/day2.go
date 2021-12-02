@@ -15,7 +15,7 @@ type instruction struct {
 
 func main() {
 
-	file, err := os.Open("day2.demoinput.txt")
+	file, err := os.Open("day2.input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,18 +36,18 @@ func main() {
 		log.Fatal(err)
 	}
 
-	horizontal, vertical := parseInstructionsPartOne(instructions, horizontal, vertical)
+	horizontal, vertical := parseInstructionsPartOne(instructions)
 
 	log.Println("Horizontal Position:", horizontal)
 	log.Println("Vertical Position:", vertical)
 	log.Println("Answer for Day 2, Part 1:", horizontal*vertical)
 
-	horizontal2, vertical2, aim := parseInstructionsPartTwo(instructions, horizontal, vertical)
+	horizontal, vertical, aim := parseInstructionsPartTwo(instructions)
 
-	log.Println("Horizontal Position:", horizontal2)
-	log.Println("Vertical Position:", vertical2)
+	log.Println("Horizontal Position:", horizontal)
+	log.Println("Vertical Position:", vertical)
 	log.Println("Aim:", aim)
-	log.Println("Answer for Day 2, Part 1:", horizontal2*vertical2)
+	log.Println("Answer for Day 2, Part 1:", horizontal*vertical)
 
 }
 

@@ -11,7 +11,7 @@ func main() {
 
 	input := make([]string, 0)
 
-	file, err := os.Open("day3.demoinput.txt")
+	file, err := os.Open("day3.input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -25,8 +25,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	zeroes := make([]int, 5)
-	ones := make([]int, 5)
+	zeroes := make([]int, 12)
+	ones := make([]int, 12)
 
 	for _, entry := range input {
 		for i, bit := range entry {
@@ -53,7 +53,7 @@ func main() {
 }
 func gamma(zeroes []int, ones []int) []byte {
 
-	gamma := make([]byte, 5)
+	gamma := make([]byte, 12)
 
 	for i := 0; i < 5; i++ {
 		if zeroes[i] < ones[i] {

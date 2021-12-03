@@ -55,7 +55,7 @@ func gamma(zeroes []int, ones []int) []byte {
 
 	gamma := make([]byte, 12)
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 12; i++ {
 		if zeroes[i] < ones[i] {
 			gamma[i] = '1'
 		} else {

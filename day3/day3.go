@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
-	//"strconv"
+	"strconv"
 )
 
 func main() {
@@ -39,10 +39,16 @@ func main() {
 		}
 	}
 
-	gammaResult := (string(gamma(zeroes, ones)))
+	gammaResult, _ := strconv.ParseInt((string(gamma(zeroes, ones))), 2, 64)
+	epsilonResult, _ := strconv.ParseInt((string(epsilon(zeroes, ones))), 2, 64)
 
 	log.Println("Gamma is:", gammaResult)
-	log.Println("Epsilon is:", epsilon(zeroes, ones))
+	log.Println("Epsilon is:", epsilonResult)
+	log.Println("Part 1 answer is:", gammaResult*epsilonResult)
+	// log.Println("Epsilon is:", ^gammaResult)
+	// really wanted to try and use bitwise negation on gamma to get epsilon
+	// but I didn't quite figure it out before I got impatient and wanted to solve the puzzle.
+	// but I mean also I guess I kind of did it in the epsilon function, it just wasn't as easy as doing ^gamma :(
 
 }
 func gamma(zeroes []int, ones []int) []byte {

@@ -25,6 +25,10 @@ func main() {
 		log.Fatal(err)
 	}
 
+	///
+	/// PART TWO
+	///
+
 	zeroes := make([]int, 12)
 	ones := make([]int, 12)
 
@@ -49,6 +53,24 @@ func main() {
 	// really wanted to try and use bitwise negation on gamma to get epsilon
 	// but I didn't quite figure it out before I got impatient and wanted to solve the puzzle.
 	// but I mean also I guess I kind of did it in the epsilon function, it just wasn't as easy as doing ^gamma :(
+
+	///
+	/// PART TWO
+	///
+
+	co2Candidates = make([]string, 0)
+	o2Candidates = make([]string, 0)
+
+	for _, entry := range input {
+		for i, bit := range entry {
+			if bit == '0' {
+				zeroes[i]++
+			}
+			if bit == '1' {
+				ones[i]++
+			}
+		}
+	}
 
 }
 func gamma(zeroes []int, ones []int) []byte {

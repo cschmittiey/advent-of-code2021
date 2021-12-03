@@ -37,7 +37,7 @@ func gamma(input []string) int {
 				zeroes[i]++
 			}
 			if bit == 49 {
-				ones[1]++
+				ones[i]++
 			}
 		}
 	}

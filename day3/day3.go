@@ -58,8 +58,8 @@ func main() {
 	/// PART TWO
 	///
 
-	co2Candidates = make([]string, 0)
-	o2Candidates = make([]string, 0)
+	// co2Candidates = make([]string, 0)
+	// o2Candidates = make([]string, 0)
 
 	for _, entry := range input {
 		for i, bit := range entry {
